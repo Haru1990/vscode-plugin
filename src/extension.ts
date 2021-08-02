@@ -1,25 +1,25 @@
+/*
+ * @Author: 董方旭
+ * @Date: 2021-08-02 19:05:58
+ * @LastEditors: 董方旭
+ * @LastEditTime: 2021-08-02 20:21:31
+ * @Description: extension entry
+ */
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
+import helloworld from './helloworld';
+import codeslot from './codeslot';
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
-	
 	// Use the console to output diagnostic information (console.log) and errors (console.error)
 	// This line of code will only be executed once when your extension is activated
-	console.log('Congratulations, your extension "vscode-plugin" is now active!');
+	console.log('Congratulations, your extension "vscode-plugin" is now active!  dfx');
 
-	// The command has been defined in the package.json file
-	// Now provide the implementation of the command with registerCommand
-	// The commandId parameter must match the command field in package.json
-	let disposable = vscode.commands.registerCommand('vscode-plugin.helloWorld', () => {
-		// The code you place here will be executed every time your command is executed
-		// Display a message box to the user
-		vscode.window.showInformationMessage('Hello World from vscode-plugin!');
-	});
-
-	context.subscriptions.push(disposable);
+	helloworld(context);
+	codeslot(context);
 }
 
 // this method is called when your extension is deactivated
